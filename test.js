@@ -47,30 +47,44 @@ data=[['Alabama', 'Republican', [72, 33]],
       ['Washington', 'Democratic', [50, 47, 1]],
       ['West Virginia', 'Republican', [64, 36]],    
       ['Wisconsin', 'Republican', [63, 36]],     
-      ['Wyoming', 'Republican', [51, 9]]];
+      ['Wyoming', 'Republican', [51, 9]],
+      ['DC','IDK',[0,0]]];
 
 console.log(data.length)
 function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
     return "<h4>"+n+"</h4><table>"+
-	"<tr><td>Low</td><td>"+(d.low)+"</td></tr>"+
-	"<tr><td>Average</td><td>"+(d.avg)+"</td></tr>"+
-	"<tr><td>High</td><td>"+(d.high)+"</td></tr>"+
+	"<tr><td>Party</td><td>"+(d.party)+"</td></tr>"+
+	"<tr><td>Majority</td><td>"+(d.majority)+"</td></tr>"+
+	"<tr><td>Minority</td><td>"+(d.minority)+"</td></tr>"+
 	"</table>";
 }
 
 var sampleData ={};	/* Sample random data. */	
-["HI", "AK", "FL", "SC", "GA", "AL", "NC", "TN", "RI", "CT", "MA",
+var i=0;
+dat=["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI",
+ "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", 
+ "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", 
+ "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", 
+ "VT", "VA", "WA", "WV", "WI", "WY", "DC"]
+
+dats=["HI", "AK", "FL", "SC", "GA", "AL", "NC", "TN", "RI", "CT", "MA",
  "ME", "NH", "VT", "NY", "NJ", "PA", "DE", "MD", "WV", "KY", "OH", 
  "MI", "WY", "MT", "ID", "WA", "DC", "TX", "CA", "AZ", "NV", "UT", 
  "CO", "NM", "OR", "ND", "SD", "NE", "IA", "MS", "IN", "IL", "MN", 
  "WI", "MO", "AR", "OK", "KS", "LS", "VA"]
-    .forEach(function(d){ 
-	var low=Math.round(100*Math.random()), 
-	mid=Math.round(100*Math.random()), 
-	high=Math.round(100*Math.random());
-	sampleData[d]={low:d3.min([low,mid,high]), high:d3.max([low,mid,high]), 
-		       avg:Math.round((low+mid+high)/3), color:d3.interpolate("#ffffcc", "#800026")(low/100)}; 
-    });
+
+console.log(dat.length)
+
+
+dats.forEach(function(d){ 
+    big=data[i][2][0];
+    small=data[i][2][1];
+    sampleData[d]={party:data[i][1], majority:big, 
+		   minority:small, color:d3.interpolate("#ffbbcc", "#200026")(big/100)};
+    console.log(this)
+    i++;
+});
+
 
 /* draw states on id #statesvg */	
 uStates.draw("#statesvg", sampleData, tooltipHtml);
