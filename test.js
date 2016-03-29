@@ -1,62 +1,74 @@
-data= [{state: "Hawaii", 2012_res: false, num_rep: 8, num_dem: 43, num_indie: 0},
-    {state: "Alaska", 2012_res: true , num_rep: 23 , num_dem: 16 , num_indie: 1 },
-	{state: "Florida", 2012_res: false, num_rep: 82, num_dem: 37, num_indie: 1},
-	{state: "South Carolina", 2012_res: true, num_rep: 78, num_dem: 46, num_indie: 0},
-	{state: "Georgia", 2012_res: true, num_rep: 19, num_dem: 60, num_indie: 1},
-	{state: "Alabama", 2012_res: true , num_rep: 72 , num_dem: 33 , num_indie: 0},
-	{state: "North Carolina", 2012_res: true, num_rep: 76, num_dem: 46, num_indie: 0},
-	{state: "Tennessee", 2012_res: true, num_rep: 73, num_dem: 26, num_indie: 0},
-	{state: "Rhode Island", 2012_res: false, num_rep: 63, num_dem: 11, num_indie: 1},
-	{state: "Connecticut", 2012_res: false, num_rep: 64, num_dem: 87, num_indie: 0},
-	{state: "Massachusetts", 2012_res: false, num_rep: 34, num_dem: 126, num_indie: 0},
-	{state: "Maine", 2012_res: false, num_rep: 68, num_dem: 79, num_indie: 4},
-	{state: "New Hampshire", 2012_res: false, num_rep: 239, num_dem: 160, num_indie: 1},
-	{state: "Vermont", 2012_res: false, num_rep: 84, num_dem: 55, num_indie: 9},
-	{state: "New York", 2012_res: false, num_rep: 106, num_dem: 44, num_indie: 0},
-	{state: "New Jersey", 2012_res: false, num_rep: 48, num_dem: 32, num_indie: 0},
-	{state: "Pennsylvania", 2012_res: false, num_rep: 119, num_dem: 84, num_indie: 0},
-	{state: "Delaware", 2012_res: false, num_rep: 16, num_dem: 25, num_indie: 0},
-	{state: "Maryland", 2012_res: false, num_rep: 51, num_dem: 90, num_indie: 0},
-	{state: "West Virginia", 2012_res: true, num_rep: 64, num_dem: 36, num_indie: 0},
-	{state: "Kentucky", 2012_res: true, num_rep: 46, num_dem: 54, num_indie: 0},
-	{state: "Ohio", 2012_res: false, num_rep: 65, num_dem: 34, num_indie: 0},
-	{state: "Michigan", 2012_res: false, num_rep: 63, num_dem: 47, num_indie: 0},
-	{state: "Wyoming", 2012_res: true, num_rep: 51, num_dem: 9, num_indie: 0},
-	{state: "Montana", 2012_res: true, num_rep: 59, num_dem: 41, num_indie: 0},
-	{state: "Idaho", 2012_res: true, num_rep: 56, num_dem: 14, num_indie: 0},
-	{state: "Washington", 2012_res: false, num_rep: 50, num_dem: 47, num_indie: 1},
-	{state: "DC", 2012_res: false, num_rep: 1, num_dem: 1, num_indie: 1},
-	{state: "Texas", 2012_res: true, num_rep: 98, num_dem: 52, num_indie: 0},
-	{state: "California", 2012_res: false, num_rep: ,52 num_dem: 28, num_indie: 0},
-	{state: "Arizona", 2012_res: true, num_rep: 38 , num_dem: 22 , num_indie: 0},
-	{state: "Nevada", 2012_res: false, num_rep: 27, num_dem: 15, num_indie:0 },
-	{state: "Utah", 2012_res: true, num_rep: 62, num_dem: 13, num_indie: 0},
-	{state: "Colorado", 2012_res: false, num_rep: 31, num_dem: 34, num_indie:0},
-    {state: "New Mexico", 2012_res: false, num_rep: 37, num_dem: 33, num_indie: 0},
-    {state: "Oregon", 2012_res: false, num_rep: 35, num_dem: 25, num_indie: 0},
-    {state: "North Dakota", 2012_res: true, num_rep: 71, num_dem: 23, num_indie: 0},
-    {state: "South Dakota", 2012_res: true, num_rep: 58, num_dem: 12, num_indie: 0},
-    {state: "Nebraska", 2012_res: true, num_rep: 1, num_dem:1 , num_indie: 0},
-    {state: "Iowa", 2012_res: false , num_rep:57 , num_dem: 43, num_indie: 0},
-  	{state: "Mississippi", 2012_res: true, num_rep: 66, num_dem: 56, num_indie: 0},
-    {state: "Indiana", 2012_res: true, num_rep: 71, num_dem: 29, num_indie: 0},
-    {state: "Illinois", 2012_res: false, num_rep: 47, num_dem:71 , num_indie: 0},
-    {state: "Minnesota", 2012_res: false, num_rep: 72, num_dem: 62, num_indie: 0},
-    {state: "Wisconsin", 2012_res: false, num_rep: 63, num_dem: 36, num_indie: 0},
-    {state: "Missouri", 2012_res: true, num_rep: 118, num_dem: 41, num_indie: 1},
-	{state: "Arkansas", 2012_res: true , num_rep: 64, num_dem: 36, num_indie: 0},
-    {state: "Oklahoma", 2012_res: true, num_rep: 72, num_dem: 29, num_indie: 0},
-    {state: "Kansas", 2012_res: true, num_rep: 97, num_dem: 28, num_indie: 0},
-    {state: "Louisiana", 2012_res: true , num_rep: 61 , num_dem: 42, num_indie: 2},
-    {state: "Virginia", 2012_res: false, num_rep: 66, num_dem: 33, num_indie: 0},
+var data = [
+  {state: "Hawaii", res: false, num_rep: 8,num_dem: 43, num_indie: 0},
+  {state: "Alaska", res: true , num_rep: 23 , num_dem: 16 , num_indie: 1 },
+	{state: "Florida", res: false, num_rep: 82, num_dem: 37, num_indie: 1},
+	{state: "South Carolina", res: true, num_rep: 78, num_dem: 46, num_indie: 0},
+	{state: "Georgia", res: true, num_rep: 119, num_dem: 60, num_indie: 1},
+	{state: "Alabama", res: true , num_rep: 72 , num_dem: 33 , num_indie: 0},
+	{state: "North Carolina", res: true, num_rep: 76, num_dem: 46, num_indie: 0},
+	{state: "Tennessee", res: true, num_rep: 73, num_dem: 26, num_indie: 0},
+	{state: "Rhode Island", res: false, num_rep: 63, num_dem: 11, num_indie: 1},
+	{state: "Connecticut", res: false, num_rep: 64, num_dem: 87, num_indie: 0},
+	{state: "Massachusetts", res: false, num_rep: 34, num_dem: 126, num_indie: 0},
+	{state: "Maine", res: false, num_rep: 68, num_dem: 79, num_indie: 4},
+	{state: "New Hampshire", res: false, num_rep: 239, num_dem: 160, num_indie: 1},
+	{state: "Vermont", res: false, num_rep: 84, num_dem: 55, num_indie: 9},
+	{state: "New York", res: false, num_rep: 106, num_dem: 44, num_indie: 0},
+	{state: "New Jersey", res: false, num_rep: 48, num_dem: 32, num_indie: 0},
+	{state: "Pennsylvania", res: false, num_rep: 119, num_dem: 84, num_indie: 0},
+	{state: "Delaware", res: false, num_rep: 16, num_dem: 25, num_indie: 0},
+	{state: "Maryland", res: false, num_rep: 51, num_dem: 90, num_indie: 0},
+	{state: "West Virginia", res: true, num_rep: 64, num_dem: 36, num_indie: 0},
+	{state: "Kentucky", res: true, num_rep: 46, num_dem: 54, num_indie: 0},
+	{state: "Ohio", res: false, num_rep: 65, num_dem: 34, num_indie: 0},
+	{state: "Michigan", res: false, num_rep: 63, num_dem: 47, num_indie: 0},
+	{state: "Wyoming", res: true, num_rep: 51, num_dem: 9, num_indie: 0},
+	{state: "Montana", res: true, num_rep: 59, num_dem: 41, num_indie: 0},
+	{state: "Idaho", res: true, num_rep: 56, num_dem: 14, num_indie: 0},
+	{state: "Washington", res: false, num_rep: 50, num_dem: 47, num_indie: 1},
+	{state: "DC", res: false, num_rep: 1, num_dem: 1, num_indie: 1},
+	{state: "Texas", res: true, num_rep: 98, num_dem: 52, num_indie: 0},
+	{state: "California", res: false, num_rep: 52, num_dem: 28, num_indie: 0},
+	{state: "Arizona", res: true, num_rep: 38 , num_dem: 22 , num_indie: 0},
+	{state: "Nevada", res: false, num_rep: 27, num_dem: 15, num_indie:0 },
+	{state: "Utah", res: true, num_rep: 62, num_dem: 13, num_indie: 0},
+	{state: "Colorado", res: false, num_rep: 31, num_dem: 34, num_indie:0},
+    {state: "New Mexico", res: false, num_rep: 37, num_dem: 33, num_indie: 0},
+    {state: "Oregon", res: false, num_rep: 35, num_dem: 25, num_indie: 0},
+    {state: "North Dakota", res: true, num_rep: 71, num_dem: 23, num_indie: 0},
+    {state: "South Dakota", res: true, num_rep: 58, num_dem: 12, num_indie: 0},
+    {state: "Nebraska", res: true, num_rep: 1, num_dem:1 , num_indie: 0},
+    {state: "Iowa", res: false , num_rep:57 , num_dem: 43, num_indie: 0},
+  	{state: "Mississippi", res: true, num_rep: 66, num_dem: 56, num_indie: 0},
+    {state: "Indiana", res: true, num_rep: 71, num_dem: 29, num_indie: 0},
+    {state: "Illinois", res: false, num_rep: 47, num_dem:71 , num_indie: 0},
+    {state: "Minnesota", res: false, num_rep: 72, num_dem: 62, num_indie: 0},
+    {state: "Wisconsin", res: false, num_rep: 63, num_dem: 36, num_indie: 0},
+    {state: "Missouri", res: true, num_rep: 118, num_dem: 41, num_indie: 1},
+	{state: "Arkansas", res: true , num_rep: 64, num_dem: 36, num_indie: 0},
+    {state: "Oklahoma", res: true, num_rep: 72, num_dem: 29, num_indie: 0},
+    {state: "Kansas", res: true, num_rep: 97, num_dem: 28, num_indie: 0},
+    {state: "Louisiana", res: true , num_rep: 61 , num_dem: 42, num_indie: 2},
+    {state: "Virginia", res: false, num_rep: 66, num_dem: 33, num_indie: 0},
  ];
 
 console.log(data.length)
 function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
-    return "<h4>"+n+"</h4><table>"+
-	"<tr><td>Party</td><td>"+(d.party)+"</td></tr>"+
-	"<tr><td>Majority</td><td>"+(d.majority)+"</td></tr>"+
-	"<tr><td>Minority</td><td>"+(d.minority)+"</td></tr>"+
+  var majority = '-';
+  var minority = '-';
+  if(d.num_rep > d.num_dem){
+    var party = "Republican";
+    majority = " "+d.num_rep;
+    minority = " "+d.num_dem;
+  }else{
+    var party = "Democrat";
+    majority = ' '+ d.num_dem;
+    minority = ' '+d.num_rep;
+  }
+  return "<h4>"+n+"</h4><table>"+
+	"<tr><td>Party</td><td>"+party+"</td></tr>"+
+	"<tr><td>Majority</td><td>"+majority+"</td></tr>"+
+	"<tr><td>Minority</td><td>"+minority+"</td></tr>"+
 	"</table>";
 }
 var color_select = function(dem, rep, ind, name){
@@ -65,6 +77,12 @@ var color_select = function(dem, rep, ind, name){
   var green = Math.round((255*ind)/(dem+rep+ind));
   console.log(''+rep+' '+dem+' '+red+' '+blue+' '+name);
   return "rgb("+red+","+green+","+blue+")";
+}
+var color_2 = function (bool) {
+  if(bool){
+    return "red";
+  }
+  return "blue";
 }
 var sampleData ={};	/* Sample random data. */
 var i=0;
@@ -81,16 +99,70 @@ dats=["HI", "AK", "FL", "SC", "GA", "AL", "NC", "TN", "RI", "CT", "MA",
  "WI", "MO", "AR", "OK", "KS", "LS", "VA"]
 
 console.log(dat.length)
-
-
-dats.forEach(function(d){
-    big=data[i][2][0];
-    small=data[i][2][1];
-    sampleData[d]={party:data[i][1], majority:big,
-		   minority:small, color:color_select(data[i][2][0],data[i][2][1],0,data[i][0])};
-    console.log(this)
-    i++;
+var election = document.getElementById('election');
+var legislature = document.getElementById('legislature');
+legislature.addEventListener('click', function(e){
+  dats.forEach(function(d){
+      //big=data[i][2][0];
+      //small=data[i][2][1];
+      var maj = '-';
+      var min = '-';
+      if(d.num_rep > d.num_dem){
+        var party = "Republican";
+        maj = " "+d.num_rep;
+        min = " "+d.num_dem;
+      }else{
+        var party = "Democrat";
+        maj = ' '+ d.num_dem;
+        min = ' '+d.num_rep;
+      }
+      sampleData[d]={party:party, majority:maj,
+  		   minority:min , color:color_select(d.num_dem,d.num_rep,d.num_indie,d.state)};
+      console.log(this)
+      i++;
+  });
+});
+election.addEventListener('click', function(e){
+  dats.forEach(function(d){
+      //big=data[i][2][0];
+      //small=data[i][2][1];
+      var maj = '-';
+      var min = '-';
+      if(d.num_rep > d.num_dem){
+        var party = "Republican";
+        maj = " "+d.num_rep;
+        min = " "+d.num_dem;
+      }else{
+        var party = "Democrat";
+        maj = ' '+ d.num_dem;
+        min = ' '+d.num_rep;
+      }
+      sampleData[d]={party:party, majority:maj,
+  		   minority:min , color:color_2(d.res)};
+      console.log(this)
+      i++;
+  });
 });
 
+
+  dats.forEach(function(d){
+      //big=data[i][2][0];
+      //small=data[i][2][1];
+      var maj = '-';
+      var min = '-';
+      if(d.num_rep > d.num_dem){
+        var party = "Republican";
+        maj = " "+d.num_rep;
+        min = " "+d.num_dem;
+      }else{
+        var party = "Democrat";
+        maj = ' '+ d.num_dem;
+        min = ' '+d.num_rep;
+      }
+      sampleData[d]={party:party, majority:maj,
+  		   minority:min , color:color_select(data[i].num_dem,data[i].num_rep,data[i].num_indie,data[i].state)};
+      console.log(this)
+      i++;
+  });
 /* draw states on id #statesvg */
 uStates.draw("#statesvg", sampleData, tooltipHtml);
