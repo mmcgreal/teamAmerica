@@ -37,7 +37,7 @@ var data = [
     {state: "Oregon", res: false, num_rep: 35, num_dem: 25, num_indie: 0},
     {state: "North Dakota", res: true, num_rep: 71, num_dem: 23, num_indie: 0},
     {state: "South Dakota", res: true, num_rep: 58, num_dem: 12, num_indie: 0},
-    {state: "Nebraska", res: true, num_rep: 1, num_dem:1 , num_indie: 0},
+    {state: "Nebraska", res: true, num_rep: 1, num_dem:1 , num_indie: 1},
     {state: "Iowa", res: false , num_rep:57 , num_dem: 43, num_indie: 0},
   	{state: "Mississippi", res: true, num_rep: 66, num_dem: 56, num_indie: 0},
     {state: "Indiana", res: true, num_rep: 71, num_dem: 29, num_indie: 0},
@@ -55,22 +55,11 @@ var data = [
 console.log(data.length)
 var k = 0;
 function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
-  var majority = 0;
-  var minority = 0;
-  if(data[k].num_rep>data[k].num_dem){
-    var party = "Republican";
-    majority = data[k].num_rep;
-    minority = data[k].num_dem;
-  }else{
-    var party = "Democrat";
-    majority =  data[k].num_dem;
-    minority = data[k].num_rep;
-  }
-  k++;
   return "<h4>"+n+"</h4><table>"+
-	"<tr><td>Party</td><td>"+party+"</td></tr>"+
-	"<tr><td>Majority</td><td>"+majority+"</td></tr>"+
-	"<tr><td>Minority</td><td>"+minority+"</td></tr>"+
+	"<tr><td>Party</td><td>"+d.party+"</td></tr>"+
+	"<tr><td>Majority</td><td>"+d.majority+"</td></tr>"+
+	"<tr><td>Minority</td><td>"+d.minority+"</td></tr>"+
+  "<tr><td>Minority</td><td>"+d.indie+"</td></tr>"+
 	"</table>";
 }
 var color_select = function(dem, rep, ind, name){
@@ -100,19 +89,20 @@ console.log(dat.length)
 dats.forEach(function(d){
     //big=data[i][2][0];
     //small=data[i][2][1];
-    var maj = '-';
-    var min = '-';
-    if(d.num_rep > d.num_dem){
+    var indie = data[k].num_indie;
+    if(data[k].num_rep > data[k].num_dem){
       var party = "Republican";
-      maj = d.num_rep;
-      min = d.num_dem;
+      var maj = data[k].num_rep;
+      var min = data[k].num_dem;
     }else{
       var party = "Democrat";
-      maj =  d.num_dem;
-      min = d.num_rep;
+      var maj =  data[k].num_dem;
+      var min = data[k].num_rep;
     }
+
+    k++;
     sampleData[d]={party:party, majority:maj,
-		   minority:min , color:color_select(data[i].num_dem,data[i].num_rep,data[i].num_indie,data[i].state)};
+		   minority:min, indie:indie, color:color_select(data[i].num_dem,data[i].num_rep,data[i].num_indie,data[i].state)};
     console.log(this)
     i++;
 });

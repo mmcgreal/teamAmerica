@@ -54,14 +54,8 @@ var data = [
 var k = 0;
 console.log(data.length)
 function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
-  if(data[k].res){
-    var party = "Republican";
-  }else{
-    var party = "Democrat";
-  }
-  k++;
   return "<h4>"+n+"</h4><table>"+
-	"<tr><td>Party</td><td>"+party+"</td></tr>"+
+	"<tr><td>Party</td><td>"+d.party+"</td></tr>"+
 	"</table>";
 }
 var color_select = function(e){
@@ -90,19 +84,14 @@ console.log(dat.length)
 dats.forEach(function(d){
     //big=data[i][2][0];
     //small=data[i][2][1];
-    var maj = '-';
-    var min = '-';
-    if(d.num_rep > d.num_dem){
+    if(data[k].res){
       var party = "Republican";
-      maj = d.num_rep;
-      min = d.num_dem;
     }else{
       var party = "Democrat";
-      maj =  d.num_dem;
-      min = d.num_rep;
     }
-    sampleData[d]={party:party, majority:maj,
-		   minority:min , color:color_select(data[i].res)};
+    k++
+    sampleData[d]={party:party, majority:'maj',
+		   minority:'min' , color:color_select(data[i].res)};
     console.log(this)
     i++;
 });
