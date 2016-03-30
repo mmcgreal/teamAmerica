@@ -54,29 +54,22 @@ var data = [
 
 console.log(data.length)
 function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
-  var majority = '_';
-  var minority = "-";
-  if(d.num_rep > d.num_dem){
+  var majority = '-';
+  var minority = '-';
+  if(d.res){
     var party = "Republican";
-    majority = " "+d.num_rep;
-    minority = " "+d.num_dem;
   }else{
     var party = "Democrat";
-    majority = ' '+ d.num_dem;
-    minority = ' '+d.num_rep;
   }
   return "<h4>"+n+"</h4><table>"+
 	"<tr><td>Party</td><td>"+party+"</td></tr>"+
-	"<tr><td>Majority</td><td>"+majority+"</td></tr>"+
-	"<tr><td>Minority</td><td>"+minority+"</td></tr>"+
 	"</table>";
 }
-var color_select = function(dem, rep, ind, name){
-  var blue = Math.round((255*dem)/(dem+rep+ind));
-  var red = Math.round((255*rep)/(dem+rep+ind));
-  var green = Math.round((255*ind)/(dem+rep+ind));
-  console.log(''+rep+' '+dem+' '+red+' '+blue+' '+name);
-  return "rgb("+red+","+green+","+blue+")";
+var color_select = function(e){
+  if(e){
+    return "red";
+  }
+  return "blue";
 }
 var sampleData ={};	/* Sample random data. */
 var i=0;
@@ -102,15 +95,15 @@ dats.forEach(function(d){
     var min = '-';
     if(d.num_rep > d.num_dem){
       var party = "Republican";
-      maj = " "+d.num_rep;
-      min = " "+d.num_dem;
+      maj = d.num_rep;
+      min = d.num_dem;
     }else{
       var party = "Democrat";
-      maj = ' '+ d.num_dem;
-      min = ' '+d.num_rep;
+      maj =  d.num_dem;
+      min = d.num_rep;
     }
     sampleData[d]={party:party, majority:maj,
-		   minority:min , color:color_select(data[i].num_dem,data[i].num_rep,data[i].num_indie,data[i].state)};
+		   minority:min , color:color_select(data[i].res)};
     console.log(this)
     i++;
 });
