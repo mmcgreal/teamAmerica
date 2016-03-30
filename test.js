@@ -53,18 +53,20 @@ var data = [
  ];
 
 console.log(data.length)
+var k = 0;
 function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
-  var majority = '_';
-  var minority = "-";
-  if(d.num_rep > d.num_dem){
+  var majority = 0;
+  var minority = 0;
+  if(data[k].num_rep>data[k].num_dem){
     var party = "Republican";
-    majority = " "+d.num_rep;
-    minority = " "+d.num_dem;
+    majority = data[k].num_rep;
+    minority = data[k].num_dem;
   }else{
     var party = "Democrat";
-    majority = ' '+ d.num_dem;
-    minority = ' '+d.num_rep;
+    majority =  data[k].num_dem;
+    minority = data[k].num_rep;
   }
+  k++;
   return "<h4>"+n+"</h4><table>"+
 	"<tr><td>Party</td><td>"+party+"</td></tr>"+
 	"<tr><td>Majority</td><td>"+majority+"</td></tr>"+
@@ -102,12 +104,12 @@ dats.forEach(function(d){
     var min = '-';
     if(d.num_rep > d.num_dem){
       var party = "Republican";
-      maj = " "+d.num_rep;
-      min = " "+d.num_dem;
+      maj = d.num_rep;
+      min = d.num_dem;
     }else{
       var party = "Democrat";
-      maj = ' '+ d.num_dem;
-      min = ' '+d.num_rep;
+      maj =  d.num_dem;
+      min = d.num_rep;
     }
     sampleData[d]={party:party, majority:maj,
 		   minority:min , color:color_select(data[i].num_dem,data[i].num_rep,data[i].num_indie,data[i].state)};

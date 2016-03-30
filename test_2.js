@@ -51,16 +51,15 @@ var data = [
     {state: "Louisiana", res: true , num_rep: 61 , num_dem: 42, num_indie: 2},
     {state: "Virginia", res: false, num_rep: 66, num_dem: 33, num_indie: 0},
  ];
-
+var k = 0;
 console.log(data.length)
 function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
-  var majority = '-';
-  var minority = '-';
-  if(d.res){
+  if(data[k].res){
     var party = "Republican";
   }else{
     var party = "Democrat";
   }
+  k++;
   return "<h4>"+n+"</h4><table>"+
 	"<tr><td>Party</td><td>"+party+"</td></tr>"+
 	"</table>";
